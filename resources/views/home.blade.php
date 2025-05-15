@@ -1,33 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-gray-100 text-gray-900">
-<header class="bg-white shadow-md py-4">
-<div class="container mx-auto flex justify-between items-center px-6">
-   <a href="/"><h1 class="text-xl font-bold">Brand</h1></a>
-   <nav>
-       <ul class="flex space-x-6">
-           <li><a href="/about" class="hover:text-blue-500">About Us</a></li>
-           <li><a href="/contact" class="hover:text-blue-500">Contact</a></li>
-       </ul>
-   </nav>
-</div>
-</header>
-<main class="container mx-auto mt-10 px-6 text-center">
-    @extends('layouts.app')
+@extends('layouts.blog')
 
-    @section('content')
-<h2 class="text-3xl font-bold">Welcome to Our Homepage</h2>
-<p class="mt-4 text-lg text-gray-600">Discover more about us and get in touch.</p>
-    @endsection
-</main>
-<footer class="mt-10 py-6 bg-white text-center shadow-md">
-<p class="text-gray-600">&copy; 2025 Brand. All rights reserved.</p>
-</footer>
-</body>
-</html>
+@section('content')
+    <main class="container mx-auto mt-6 flex gap-6">
+        <!-- Blog Posts Section -->
+        <section class="w-3/4 bg-white p-6 shadow-md rounded-lg">
+            <h2 class="text-xl font-semibold mb-4">Latest Posts</h2>
+            <div class="space-y-6">
+                <article class="flex gap-4 border-b pb-4">
+                    <img src="{{ asset('images/placeholder-150x150.png') }}" alt="Post Image" class="w-32 h-32 object-cover rounded">
+                    <div>
+                        <h3 class="text-lg font-semibold"><a href="#" class="hover:underline">Blog Post Title</a></h3>
+                        <p class="text-gray-600">A short description of the blog post goes here...</p>
+                    </div>
+                </article>
+                <article class="flex gap-4 border-b pb-4">
+                    <img src="{{ asset('images/placeholder-150x150.png') }}" alt="Post Image" class="w-32 h-32 object-cover rounded">
+                    <div>
+                        <h3 class="text-lg font-semibold"><a href="#" class="hover:underline">Another Blog Post</a></h3>
+                        <p class="text-gray-600">Another short description of a blog post...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Sidebar Section -->
+        <aside class="w-1/4 bg-white p-6 shadow-md rounded-lg">
+            <h2 class="text-xl font-semibold mb-4">Categories</h2>
+            <ul class="space-y-2">
+                <li><a href="#" class="text-gray-600 hover:text-gray-800">Technology</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-gray-800">Design</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-gray-800">Development</a></li>
+                <li><a href="#" class="text-gray-600 hover:text-gray-800">Marketing</a></li>
+            </ul>
+        </aside>
+    </main>
+@endsection
