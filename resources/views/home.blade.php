@@ -19,8 +19,12 @@
 </div>
 </header>
 <main class="container mx-auto mt-10 px-6 text-center">
+    @extends('layouts.app')
+
+    @section('content')
 <h2 class="text-3xl font-bold">Welcome to Our Homepage</h2>
 <p class="mt-4 text-lg text-gray-600">Discover more about us and get in touch.</p>
+    @endsection
 </main>
 <footer class="mt-10 py-6 bg-white text-center shadow-md">
 <p class="text-gray-600">&copy; 2025 Brand. All rights reserved.</p>
